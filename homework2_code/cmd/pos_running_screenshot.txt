@@ -1,0 +1,107 @@
+$ go run main.go -c chain -s lzhx_ -l 8080 -a 15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi -p pos
+local http server listening on 127.0.0.1:8081
+2018/10/04 00:43:31 I am /ip4/127.0.0.1/tcp/8080/ipfs/QmQjf1HycYp4NMMLtvBnQjwLjkxdG9PkoKbtibNbgnmUma
+2018/10/04 00:43:31 Now run "go run main.go -c chain -l 8082 -d /ip4/127.0.0.1/tcp/8080/ipfs/QmQjf1HycYp4NMMLtvBnQjwLjkxdG9PkoKbtibNbgnmUma -p pos" on a different terminal
+2018/10/04 00:43:31 listening for connections
+2018/10/04 00:43:44 Got a new stream!
+Enter token balance:123
+2018/10/04 00:43:59 validator e91daa55e5dfbf0139c00558016a839b2d774204e93ecfaae0af99286234fc77
+> 4
+2018/10/04 00:44:15 Use pos to generate new block
+2018/10/04 00:44:15 newBlock is valid. Total 1 blocks
+> 2018/10/04 00:44:29 Winning validator : e91daa55e5dfbf0139c00558016a839b2d774204e93ecfaae0af99286234fc77
+[
+  {
+    "index": 0,
+    "timestamp": "2018-10-04 00:43:31.03672 -0700 PDT m=+0.002487807",
+    "result": 0,
+    "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+    "prevhash": "",
+    "proof": 100,
+    "Difficulty": 1,
+    "nonce": "",
+    "validator": "",
+    "transactions": null,
+    "accounts": {
+      "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": 10000
+    }
+  },
+  {
+    "index": 1,
+    "timestamp": "2018-10-04 00:44:15.245993 -0700 PDT m=+44.210434768",
+    "result": 4,
+    "hash": "f16e4b599d7047ae6482537b64850008665a2b551dabc1187598960eb1f207a9",
+    "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+    "proof": 0,
+    "Difficulty": 1,
+    "nonce": "",
+    "validator": "e91daa55e5dfbf0139c00558016a839b2d774204e93ecfaae0af99286234fc77",
+    "transactions": null,
+    "accounts": {
+      "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": 10000
+    }
+  },
+  {
+    "index": 2,
+    "timestamp": "2018-10-04 00:48:02.101064 -0700 PDT m=+258.101606535",
+    "result": 5,
+    "hash": "b4e4305f0b4be94fa7d9d8b057a85b67271828f51ed54f01495b19f0e9cd6d72",
+    "prevhash": "f16e4b599d7047ae6482537b64850008665a2b551dabc1187598960eb1f207a9",
+    "proof": 0,
+    "Difficulty": 1,
+    "nonce": "",
+    "validator": "26635fa4a4c79ebe24fd415a870d79bd560620ad8c328a317a6419d486829e32",
+    "transactions": null,
+    "accounts": {
+      "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": 10000
+    }
+  }
+]>
+
+
+$ go run main.go -c chain -l 8082 -d /ip4/127.0.0.1/tcp/8080/ipfs/QmQjf1HycYp4NMMLtvBnQjwLjkxdG9PkoKbtibNbgnmUma -p pos
+2018/10/04 00:43:43 option param -s miss [you can't send transacion with this node]
+local http server listening on 127.0.0.1:8083
+2018/10/04 00:43:44 I am /ip4/127.0.0.1/tcp/8082/ipfs/QmcTKaeZERzxxaZpRXrFfy7oxAjTRiMvhTVef8mXsKLoYU
+2018/10/04 00:43:44 Now run "go run main.go -c chain -l 8084 -d /ip4/127.0.0.1/tcp/8082/ipfs/QmcTKaeZERzxxaZpRXrFfy7oxAjTRiMvhTVef8mXsKLoYU -p pos" on a different terminal
+2018/10/04 00:43:44 opening stream
+Enter token balance:234
+2018/10/04 00:44:10 validator 26635fa4a4c79ebe24fd415a870d79bd560620ad8c328a317a6419d486829e32
+> [
+  {
+    "index": 0,
+    "timestamp": "2018-10-04 00:43:31.03672 -0700 PDT m=+0.002487807",
+    "result": 0,
+    "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+    "prevhash": "",
+    "proof": 100,
+    "Difficulty": 1,
+    "nonce": "",
+    "validator": "",
+    "transactions": null,
+    "accounts": {
+      "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": 10000
+    }
+  },
+  {
+    "index": 1,
+    "timestamp": "2018-10-04 00:44:15.245993 -0700 PDT m=+44.210434768",
+    "result": 4,
+    "hash": "f16e4b599d7047ae6482537b64850008665a2b551dabc1187598960eb1f207a9",
+    "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+    "proof": 0,
+    "Difficulty": 1,
+    "nonce": "",
+    "validator": "e91daa55e5dfbf0139c00558016a839b2d774204e93ecfaae0af99286234fc77",
+    "transactions": null,
+    "accounts": {
+      "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": 10000
+    }
+  }
+]> > 5
+2018/10/04 00:48:02 Use pos to generate new block
+2018/10/04 00:48:02 newBlock is valid. Total 2 blocks
+> 2018/10/04 00:48:14 Winning validator : 26635fa4a4c79ebe24fd415a870d79bd560620ad8c328a317a6419d486829e32
+
+ 
+

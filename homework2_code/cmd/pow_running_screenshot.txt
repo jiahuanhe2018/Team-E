@@ -1,0 +1,122 @@
+$ go run main.go -c chain -s lzhx_ -l 8080 -a 15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi
+local http server listening on 127.0.0.1:8081
+2018/10/04 00:50:53 I am /ip4/127.0.0.1/tcp/8080/ipfs/QmY2Zf8SLPvXVwyaojUbHHg4fw4cVg1DFeuDceteRK2FY2
+2018/10/04 00:50:53 Now run "go run main.go -c chain -l 8082 -d /ip4/127.0.0.1/tcp/8080/ipfs/QmY2Zf8SLPvXVwyaojUbHHg4fw4cVg1DFeuDceteRK2FY2 -p pow" on a different terminal
+2018/10/04 00:50:53 listening for connections
+2018/10/04 00:51:06 Got a new stream!
+> 12
+2018/10/04 00:51:13 Use pow to generate new block
+3f9eda72e15c811fe62087d4ee7548682b57d2f56e3218c67fb941cda6a24edd  do more work!
+4e836cf10dc781d9b6e443592839095988e8d342e1846b2a518041f173375fb0  do more work!
+12ade629de21669b95bfe9c85b8a87858e59ca1a50fdd33c96ae79466b8082b7  do more work!
+4875acc1786bf1b832656a807dbcec59f7715442684560c85c0b376e8735c490  do more work!
+bdc9ef71ec27a76f4c1cadfe69b7dee300b1c0b6a94196f9cb2aa22073dea289  do more work!
+523328e76e62ce53bed04ca54a4526f90e24d30be5d0fc07e6c2be37e7d8ffee  do more work!
+5442b62298b0097f3971b5f25298feb4e8c23d25786b376101b0c7aab623f585  do more work!
+f5c2eeaf90db94447375cd0ef8f1a864c4720d66551cd72c46978ac00521aa9f  do more work!
+d848daf39c312ab989fd5744aff9cd6a45116302f7de272ec10dd41120d62daf  do more work!
+89ae22d4469d7cc91c0fbee7bc9cadb722c834bfaf20414fb20ab2783f6743ca  do more work!
+49e47a0f0beaf42b58ad753d45db3bcdb79d622227c7fdcc11ade36d583da591  do more work!
+eaf59f530b0969eba08c1cb3daa02dcdcf45c003288727af5a660e3a34382ff4  do more work!
+e215c013b893ff25817a88ea5b3602473e63ff29da441d9f891e70bb6b563e77  do more work!
+b2a3bfe5eda7524ff7407b615a14b63f50d4f5ba6233c322d8c71d1bca5a671e  do more work!
+dac3ce31f375776681de35292d0490414e98b41ca5416f292579d131735cd4ee  do more work!
+c6c2cd28a5dfaeb4555ed841513991e095b232d419c61bcb221d02f8f331facd  do more work!
+d66c1a0235b01b0f8abd7d40014db96a7ffa900340c04eed0d6e3c19e8d1203c  do more work!
+001179a1eb3b4836e748cac6f122567c9e0be4e8c6511bc9efd5cceb9494dd08  work done!
+2018/10/04 00:51:30 newBlock is valid. Total 1 blocks
+> [
+  {
+    "index": 0,
+    "timestamp": "2018-10-04 00:50:52.908531 -0700 PDT m=+0.002380810",
+    "result": 0,
+    "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+    "prevhash": "",
+    "proof": 100,
+    "Difficulty": 1,
+    "nonce": "",
+    "validator": "",
+    "transactions": null,
+    "accounts": {
+      "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": 10000
+    }
+  },
+  {
+    "index": 1,
+    "timestamp": "2018-10-04 00:51:13.72825 -0700 PDT m=+20.821475074",
+    "result": 12,
+    "hash": "001179a1eb3b4836e748cac6f122567c9e0be4e8c6511bc9efd5cceb9494dd08",
+    "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+    "proof": 0,
+    "Difficulty": 1,
+    "nonce": "11",
+    "validator": "",
+    "transactions": null,
+    "accounts": {
+      "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": 10000
+    }
+  },
+  {
+    "index": 2,
+    "timestamp": "2018-10-04 00:52:36.427137 -0700 PDT m=+90.192671226",
+    "result": 30,
+    "hash": "0ab7d6834990cb9f73259301bd7948a553271363e2d4b7b1c84b15e47f9a726d",
+    "prevhash": "001179a1eb3b4836e748cac6f122567c9e0be4e8c6511bc9efd5cceb9494dd08",
+    "proof": 0,
+    "Difficulty": 1,
+    "nonce": "5",
+    "validator": "",
+    "transactions": null,
+    "accounts": {
+      "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": 10000
+    }
+  }
+]>
+
+
+$ go run main.go -c chain -l 8082 -d /ip4/127.0.0.1/tcp/8080/ipfs/QmY2Zf8SLPvXVwyaojUbHHg4fw4cVg1DFeuDceteRK2FY2 -p pow
+2018/10/04 00:51:06 option param -s miss [you can't send transacion with this node]
+local http server listening on 127.0.0.1:8083
+2018/10/04 00:51:06 I am /ip4/127.0.0.1/tcp/8082/ipfs/Qmca6sjsmtzFjk8y3XchPb66c1g8ZfLKPtAP85Aye5AUtM
+2018/10/04 00:51:06 Now run "go run main.go -c chain -l 8084 -d /ip4/127.0.0.1/tcp/8082/ipfs/Qmca6sjsmtzFjk8y3XchPb66c1g8ZfLKPtAP85Aye5AUtM -p pow" on a different terminal
+2018/10/04 00:51:06 opening stream
+> [
+  {
+    "index": 0,
+    "timestamp": "2018-10-04 00:50:52.908531 -0700 PDT m=+0.002380810",
+    "result": 0,
+    "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+    "prevhash": "",
+    "proof": 100,
+    "Difficulty": 1,
+    "nonce": "",
+    "validator": "",
+    "transactions": null,
+    "accounts": {
+      "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": 10000
+    }
+  },
+  {
+    "index": 1,
+    "timestamp": "2018-10-04 00:51:13.72825 -0700 PDT m=+20.821475074",
+    "result": 12,
+    "hash": "001179a1eb3b4836e748cac6f122567c9e0be4e8c6511bc9efd5cceb9494dd08",
+    "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+    "proof": 0,
+    "Difficulty": 1,
+    "nonce": "11",
+    "validator": "",
+    "transactions": null,
+    "accounts": {
+      "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": 10000
+    }
+  }
+]> 30
+2018/10/04 00:52:36 Use pow to generate new block
+b20a243c8e7b6f932435beb9934d7da53585fd46779e91102bf7ff1c9236a132  do more work!
+4228e724d43aaa698d7773b8c858110b42c006d18e4d78b14daa1d79762a3295  do more work!
+724ee421f3d415264473b5758cb88458453d4c9215f37274dbac63187af39142  do more work!
+14edacf5a2a940c3f2c14d58ff63c6e7664643b9f7fb0bd2e43664d474e1e1b5  do more work!
+981f4713aa7fd55afb0cb3b282dfcddd10f8cb908796739286bfa3d682a9118e  do more work!
+0ab7d6834990cb9f73259301bd7948a553271363e2d4b7b1c84b15e47f9a726d  work done!
+2018/10/04 00:52:41 newBlock is valid. Total 2 blocks
