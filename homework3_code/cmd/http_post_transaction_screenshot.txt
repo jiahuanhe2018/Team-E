@@ -1,0 +1,53 @@
+$ curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1GBF4VK4Ys2R5Yiz3K6ZovXpYarGH2qsEc","To":"15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi","Value":100,"Data":"message2"}' http://127.0.0.1:8081/txpool
+HTTP/1.1 201 Created
+Date: Fri, 12 Oct 2018 05:48:09 GMT
+Content-Length: 307
+Content-Type: text/plain; charset=utf-8
+
+{
+  "amount": 100,
+  "recipient": "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi",
+  "sender": "1GBF4VK4Ys2R5Yiz3K6ZovXpYarGH2qsEc",
+  "timestamp": "2018-10-11 22:48:09.128522 -0700 PDT m=+71.558635242",
+  "processed": false,
+  "data": "bWVzc2FnZTI=",
+  "special_payload": {
+    "reset_all_accounts_state": false
+  }
+}
+
+$ curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1GBF4VK4Ys2R5Yiz3KZovXpYarGH2qsEc","To":"15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi","Value":100,"Data":"message2"}' http://127.0.0.1:8081/txpool
+HTTP/1.1 201 Created
+Date: Fri, 12 Oct 2018 05:48:35 GMT
+Content-Length: 307
+Content-Type: text/plain; charset=utf-8
+
+{
+  "amount": 100,
+  "recipient": "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi",
+  "sender": "1GBF4VK4Ys2R5Yiz3K6ZovXpYarGH2qsEc",
+  "timestamp": "2018-10-11 22:48:35.068659 -0700 PDT m=+97.498516921",
+  "processed": false,
+  "data": "bWVzc2FnZTI=",
+  "special_payload": {
+    "reset_all_accounts_state": false
+  }
+}
+
+$curl -i --request POST --header 'Content-Type: application/json' --data '{"Data":"special_message","SpecialOp":true,"SpecialArgs":{"reset_all_accounts_state":true}}' http://127.0.0.1:8081/txpool
+HTTP/1.1 201 Created
+Date: Fri, 12 Oct 2018 05:49:21 GMT
+Content-Length: 245
+Content-Type: text/plain; charset=utf-8
+
+{
+  "amount": 0,
+  "recipient": "",
+  "sender": "",
+  "timestamp": "2018-10-11 22:49:21.321448 -0700 PDT m=+143.750851064",
+  "processed": false,
+  "data": "c3BlY2lhbF9tZXNzYWdl",
+  "special_payload": {
+    "reset_all_accounts_state": true
+  }
+}
