@@ -1,0 +1,204 @@
+$ go run main.go -c chain --datadir db -s lzhx_ -l 8080 -a 15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi -p pox
+local http server listening on 127.0.0.1:8081
+2018/10/19 23:38:36 I am /ip4/127.0.0.1/tcp/8080/ipfs/QmeWo66ELuNs2f2wBSqSBGa3DSc2bDYEkcETTky3tNWpCA
+2018/10/19 23:38:36 Now run "go run main.go -c chain -l 8082 -d /ip4/127.0.0.1/tcp/8080/ipfs/QmeWo66ELuNs2f2wBSqSBGa3DSc2bDYEkcETTky3tNWpCA -p pox" on a different terminal
+2018/10/19 23:38:36 Now run "go run main.go  -c chain -l 8082 -a 15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi -d /ip4/127.0.0.1/tcp/8080/ipfs/QmeWo66ELuNs2f2wBSqSBGa3DSc2bDYEkcETTky3tNWpCA -p pox" on a different terminal
+2018/10/19 23:38:36 listening for connections
+2018/10/19 23:38:50 Got a new stream!
+> 20
+Enter token balance:10
+2018/10/19 23:39:41 validator d219d9915fc657d752f5957b14f57887bb5d2c12945ef37925ff12e062070b88
+2018/10/19 23:39:41 Use pox to generate new block
+2018/10/19 23:39:41 newBlock is valid. Total 1 blocks
+8f1950d3a1a546893d284229ebfe459532c40643c149b3e4a34d66d4ec4bbc32  do more work!
+25319b64034de8e69603c45f4d2ad071e8a774bb6a6fbc24d079ededb078b8fb  do more work!
+94b99d303a7a9a04845ceb8cbc48e083848443e604c5291c20e272604beb323c  do more work!
+6cb258f9b60dcd0f58241bc1c3997c992a49a4247d6e6e03da17460745ab4b3f  do more work!
+eb5262a0e39b102ab300e4f8a4af01cb847dd0942d0f3b8311324354c48c1bab  do more work!
+e31328dbadab94175bf0174c101a8a691a2dd56f9ecc90a90597098656e06a7e  do more work!
+930df5194beaebe0c87fef1b1d13cb15d59b3bc4389d192e32f6d9aa9c1af879  do more work!
+c47a0f1060f98ec496b5f1757f007c0d3687738892bfe4ca52a7aaffb6fa22a0  do more work!
+1cdd3e99a12e0b58e1fa55686afcd5b7930c04c6aebea3ec7d542fa802989943  do more work!
+e2ae61d459073a2e402389a643b3ceec9c613d8873a6a74e28d8794b158f1d5d  do more work!
+968799175326e04248eefd8b897854131c8e4954bcc899f8ac37bae824c62730  do more work!
+92190097c7f77422a0484b4939568b5322befc11e8646b7edd1279a441616b54  do more work!
+79e1878fc16d9144c27d5c4bc3a1c2995c3215447335695522900642a60fb106  do more work!
+e5de6ea74ac75919746c12ab1bc61b320a821b94122371b0aaa340de3bbad588  do more work!
+4c26222f49d7198d8e81da4f5a5a01fea79343d649a3e886e4237470b07d9d97  do more work!
+97e7431ae8522eeae2abcab59c09cb87d5c04f5d5d78ac4d3480d2a323a8eb24  do more work!
+e18ffab150505aa0965b624d657e2b979c2def8eb17823e7975c2e06185f6e56  do more work!
+a47bfb1236ef77e3577c2d7f3f207f0e08e4038ad0c9ee460aa11aa278a3a747  do more work!
+38d7c9ff8e83a6583a3c7509d5e01c51b13655bdc10ab60af7dea8eeefb029cc  do more work!
+{
+  "blocks": [
+    {
+      "index": 0,
+      "timestamp": "2018-10-19 23:38:36.396024 -0700 PDT m=+0.002570290",
+      "result": 0,
+      "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "prevhash": "",
+      "proof": 100,
+      "Difficulty": 1,
+      "nonce": "",
+      "validator": "",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    },
+    {
+      "index": 1,
+      "timestamp": "2018-10-19 23:39:44.98112 -0700 PDT m=+54.865128667",
+      "result": 20,
+      "hash": "09be0b5efb55d984afb69fc95d8cb390a0ba59619e33f05f0e547e85d6b7cb54",
+      "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "proof": 0,
+      "Difficulty": 1,
+      "nonce": "10",
+      "validator": "119ca1e2551eb312faadde38aff741844b82460ac38826b8e8b07405a1463e97",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    }
+  ],
+  "transactions": {}
+}> 
+
+已配置数据存储目录，写入当前数据到存储目录中.file:db/chainData.txt
+>44e46f7f5c367bd406e6d7949356f457c84992bf7b879f180b402d40ae25c096  do more work!
+4a1ff5af952407220886ba832589c241298829c30293eb0a401b15df6d6f9cb8  do more work!
+df99121d82551dcccd8760643f7e3b8da36882c7327b77a6e241b4a853fb8f5a  do more work!
+a5f9f9a1d6394f4a8736e050d6c4c19c3021860aa698241d04061afa24d75b8d  do more work!
+fd9056dfbc616a1c39f974c68d42bfab0bc60213280b7d5a9b7e882e307d485d  do more work!
+8d7daeec23689132c87e5fe991b6b9c0b09563639957a0b29059133e3d49ee5d  do more work!
+b2352392977868fc188e35d119c2ba7d84801e65d17beb4ac1a406b1c61d8101  do more work!
+3e42da27e55753510e98e14be60b595bfa3f74d0b3bc0e9111502bdbecca587e  do more work!
+d3093cfdd10d8d16ac9bb7d78bb61dfea6a6aff99113d5ecbf20081d8767b321  do more work!
+24c0a134db42d169cdf209803432c136c0549098642cd44418e88800a8736645  do more work!
+273da9c27a0888e18df109d1e551eb85372d6cf96ea6af6b52d4e7be4263fcd4  do more work!
+eea0e7d5f2305ff8b061e709d55db4061897c97c1a5c71705dafc8385786db90  do more work!
+9ef460725233a48e692f9f081c52a2edc7325555b164aa9c782173dc220a7acf  do more work!
+87660ff71699a388167ea3303332b1025bb7f3fc6368debc47f803749a130842  do more work!
+f8975d12af7e0105f75fa6abb677a7a05ff454ff7421f5857d72a2c14ebc090e  do more work!
+38274e4394a4fc70a6e745945ed5168cdedda7ceadf931a8fd8a9e633d462e24  do more work!
+cc32c8c98726c50637b226083611c52d4d19dbc9243d2292d6e85347da402a24  do more work!
+00deaac6e996224fdfd7f4d8ca2ef94d9f616440b39ff2f21dde0aad59b07e1c  work done!
+
+
+已配置数据存储目录，写入当前数据到存储目录中.file:db/chainData.txt
+>{
+  "blocks": [
+    {
+      "index": 0,
+      "timestamp": "2018-10-19 23:38:36.396024 -0700 PDT m=+0.002570290",
+      "result": 0,
+      "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "prevhash": "",
+      "proof": 100,
+      "Difficulty": 1,
+      "nonce": "",
+      "validator": "",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    },
+    {
+      "index": 1,
+      "timestamp": "2018-10-19 23:39:44.98112 -0700 PDT m=+54.865128667",
+      "result": 20,
+      "hash": "09be0b5efb55d984afb69fc95d8cb390a0ba59619e33f05f0e547e85d6b7cb54",
+      "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "proof": 0,
+      "Difficulty": 1,
+      "nonce": "10",
+      "validator": "119ca1e2551eb312faadde38aff741844b82460ac38826b8e8b07405a1463e97",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    }
+  ],
+  "transactions": {}
+}> > 30
+Enter token balance:10
+2018/10/19 23:42:48 validator dd07d961d87f205848979bfa7f48bc1e39b6e9cb5e1bc6cb5341aac226def895
+2018/10/19 23:42:48 Use pox to generate new block
+2018/10/19 23:42:48 newBlock is valid. Total 2 blocks
+0bf2cc3178a7cac2b751ce654a5b3fd3b5b0108fde76d2e4d007d9e2c45eec91  work done!
+
+
+已配置数据存储目录，写入当前数据到存储目录中.file:db/chainData.txt
+>{
+  "blocks": [
+    {
+      "index": 0,
+      "timestamp": "2018-10-19 23:38:36.396024 -0700 PDT m=+0.002570290",
+      "result": 0,
+      "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "prevhash": "",
+      "proof": 100,
+      "Difficulty": 1,
+      "nonce": "",
+      "validator": "",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    },
+    {
+      "index": 1,
+      "timestamp": "2018-10-19 23:39:44.98112 -0700 PDT m=+54.865128667",
+      "result": 20,
+      "hash": "09be0b5efb55d984afb69fc95d8cb390a0ba59619e33f05f0e547e85d6b7cb54",
+      "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "proof": 0,
+      "Difficulty": 1,
+      "nonce": "10",
+      "validator": "119ca1e2551eb312faadde38aff741844b82460ac38826b8e8b07405a1463e97",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    },
+    {
+      "index": 2,
+      "timestamp": "2018-10-19 23:42:48.521451 -0700 PDT m=+252.120433770",
+      "result": 30,
+      "hash": "0bf2cc3178a7cac2b751ce654a5b3fd3b5b0108fde76d2e4d007d9e2c45eec91",
+      "prevhash": "09be0b5efb55d984afb69fc95d8cb390a0ba59619e33f05f0e547e85d6b7cb54",
+      "proof": 0,
+      "Difficulty": 1,
+      "nonce": "0",
+      "validator": "dd07d961d87f205848979bfa7f48bc1e39b6e9cb5e1bc6cb5341aac226def895",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    }
+  ],
+  "transactions": {}
+}> > 
+

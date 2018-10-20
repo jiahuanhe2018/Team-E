@@ -1,0 +1,280 @@
+$ go run main.go  -c chain -l 8084 -a 15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi -d /ip4/127.0.0.1/tcp/8082/ipfs/Qmd7DfTGroPcBBYZ2BJ3EC1fWHa3tRzhCGedxMQgmo7vuv -p pox
+2018/10/19 23:39:28 data directory for this node miss，The data of the node will not be stored.
+2018/10/19 23:39:28 option param -s miss [you can't send transacion with this node]
+local http server listening on 127.0.0.1:8085
+2018/10/19 23:39:28 I am /ip4/127.0.0.1/tcp/8084/ipfs/QmSvo32xEkr4B55yymB31nzebeUFvtxMkUtD6h9B7sZfRR
+2018/10/19 23:39:28 Now run "go run main.go -c chain -l 8086 -d /ip4/127.0.0.1/tcp/8084/ipfs/QmSvo32xEkr4B55yymB31nzebeUFvtxMkUtD6h9B7sZfRR -p pox" on a different terminal
+2018/10/19 23:39:28 Now run "go run main.go  -c chain -l 8086 -a 15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi -d /ip4/127.0.0.1/tcp/8084/ipfs/QmSvo32xEkr4B55yymB31nzebeUFvtxMkUtD6h9B7sZfRR -p pox" on a different terminal
+2018/10/19 23:39:28 opening stream
+> 20{
+  "blocks": [
+    {
+      "index": 0,
+      "timestamp": "2018-10-19 23:38:36.396024 -0700 PDT m=+0.002570290",
+      "result": 0,
+      "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "prevhash": "",
+      "proof": 100,
+      "Difficulty": 1,
+      "nonce": "",
+      "validator": "",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    }
+  ],
+  "transactions": {}
+}> 30
+Enter token balance:14
+2018/10/19 23:39:52 validator b4ee56e14d28e9082184a66c2db8046de2ef15acbcfffa9f52af9a7050fdc2c3
+2018/10/19 23:39:52 Use pox to generate new block
+2018/10/19 23:39:52 newBlock is valid. Total 1 blocks
+fa91898f2f845c52782fbd48bbac96a5f27a4466c1896d66c5c8a3ef9e3e372d  do more work!
+2fef598015dc305f8d84443229e6fa49935c501251638ab1126db19b325d9bb9  do more work!
+b163df3a01c3cdfd01e4774bbf60bc6e87173f2e94740a9554d3e16c3af01388  do more work!
+1d945b3dce3d2347a12674c9452a7c2e20a27b75fbc6ca98d90dbe5f5aecfcd9  do more work!
+72408d60abc9d3f25ced606ce3fdc59fff9d18dbd67bb97c2440bc0fc7f1410c  do more work!
+b955356b70d19b4956d307ba2770d87bcc8004bb26ff608794f315595680ec7f  do more work!
+b3dbdf2eb6bae5fcca39d7ea21b195ae4d48fab56f83dbcbcfa4ca26135729f5  do more work!
+f3c6f67ec21e221a46980521d41f4bcec8aec9298339344f48ce75ca18cfd13a  do more work!
+1aea6cf75950984aeae6c1aaf5f550536be3c6dd059eb544dbb6ccd7079dc2d7  do more work!
+ba3da7dc92c5f1cdacc74558415e13490806f836e7ed0857a9c90578fce8c7bb  do more work!
+4b0c2445679c9e0967aef8956a3d5ca0304cef858e5c926b5f5a069c2aaf004d  do more work!
+8aef238f8e5f61f2a311884e7f821f8699ce825176894e86ea5fbb8ad17902ba  do more work!
+a75658d0c9296dde1ab7b03f218c0387eada9155b4a1a892800bc4ff7d642b16  do more work!
+2575b67c5aa46cbb761a257e35ee9bf242749f2a8477c7db1f891b551e5e7143  do more work!
+5c3248283d23506ccd9954703a3d87b62b524acbd5370d1bf492631e38074d7b  do more work!
+243c5f81e3eb5626ff6d44a498296cbe1240994601248f31c93f759665cdf083  do more work!
+{
+  "blocks": [
+    {
+      "index": 0,
+      "timestamp": "2018-10-19 23:38:36.396024 -0700 PDT m=+0.002570290",
+      "result": 0,
+      "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "prevhash": "",
+      "proof": 100,
+      "Difficulty": 1,
+      "nonce": "",
+      "validator": "",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    },
+    {
+      "index": 1,
+      "timestamp": "2018-10-19 23:39:44.98112 -0700 PDT m=+54.865128667",
+      "result": 20,
+      "hash": "09be0b5efb55d984afb69fc95d8cb390a0ba59619e33f05f0e547e85d6b7cb54",
+      "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "proof": 0,
+      "Difficulty": 1,
+      "nonce": "10",
+      "validator": "119ca1e2551eb312faadde38aff741844b82460ac38826b8e8b07405a1463e97",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    }
+  ],
+  "transactions": {}
+}> f5ee36a2cd74b56cd0e1b2a3968effef32ebd026f63e330bd91982a501f85b68  do more work!
+66252d6cb6550e4999c737704c0491f48fc1ed0b87539a53bd5b1a5afac94ee2  do more work!
+64ca3f34c2fad43fc4cb4940f2b8b89d49d36ebf596de2db9c072409ddd08599  do more work!
+4fedb0e28a264421474240ea829d6b107797a5e71d9bb7103885b1a58b50abe9  do more work!
+763a72008aafb59ac60d2a9b9d8086e7cae5fd3d7b6644f2f96857a8f6ad4276  do more work!
+aae6fcf9747c704e327bea785b89e70a8089e40586714aa81093d517cc54d32c  do more work!
+27bc96e8da3ceded471f10ccc7daa437f9d4ac2195f6b14e7c6f7fb0920a08d7  do more work!
+1ab86dd9485394a01eb706802eb7f6fbed502aa386c0ce4aedc5ee1c3e3aa6ff  do more work!
+f79e1e2be984e6ef08c1a4ced1b3991f280af23efceccf0d7af63c60576e3278  do more work!
+9539b99db8e42d8a010d8e0da6bb6116b276594dd8682fed584c45c9695304bf  do more work!
+149e08349f540b0004299626584b9c43b010aa823c955e545cda45adb44306e4  do more work!
+0bd6b111492deab15dbd55ada0c7686fc0a5d58dffa95cdc718fb616a1c76404  work done!
+{
+  "blocks": [
+    {
+      "index": 0,
+      "timestamp": "2018-10-19 23:38:36.396024 -0700 PDT m=+0.002570290",
+      "result": 0,
+      "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "prevhash": "",
+      "proof": 100,
+      "Difficulty": 1,
+      "nonce": "",
+      "validator": "",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    },
+    {
+      "index": 1,
+      "timestamp": "2018-10-19 23:39:44.98112 -0700 PDT m=+54.865128667",
+      "result": 20,
+      "hash": "09be0b5efb55d984afb69fc95d8cb390a0ba59619e33f05f0e547e85d6b7cb54",
+      "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "proof": 0,
+      "Difficulty": 1,
+      "nonce": "10",
+      "validator": "119ca1e2551eb312faadde38aff741844b82460ac38826b8e8b07405a1463e97",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    }
+  ],
+  "transactions": {}
+}> > 30
+Enter token balance:15
+2018/10/19 23:42:46 validator a0813325a41044d63b787482dd751059660831629e05a45a79aedd7f870da207
+2018/10/19 23:42:46 Use pox to generate new block
+2018/10/19 23:42:46 newBlock is valid. Total 2 blocks
+f080f1f5566b6eac549cb855f363e30384652f979eef5994df096856b4509df8  do more work!
+83a33330432aeb71c9001f4e67d76df3c27d4d733a0bac097e1041254f5635ad  do more work!
+bf4e4ff772135a289f589736037306f631a37b2fdeee715cd55e78b55fdcc5ae  do more work!
+{
+  "blocks": [
+    {
+      "index": 0,
+      "timestamp": "2018-10-19 23:38:36.396024 -0700 PDT m=+0.002570290",
+      "result": 0,
+      "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "prevhash": "",
+      "proof": 100,
+      "Difficulty": 1,
+      "nonce": "",
+      "validator": "",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    },
+    {
+      "index": 1,
+      "timestamp": "2018-10-19 23:39:44.98112 -0700 PDT m=+54.865128667",
+      "result": 20,
+      "hash": "09be0b5efb55d984afb69fc95d8cb390a0ba59619e33f05f0e547e85d6b7cb54",
+      "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "proof": 0,
+      "Difficulty": 1,
+      "nonce": "10",
+      "validator": "119ca1e2551eb312faadde38aff741844b82460ac38826b8e8b07405a1463e97",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    },
+    {
+      "index": 2,
+      "timestamp": "2018-10-19 23:42:48.521451 -0700 PDT m=+252.120433770",
+      "result": 30,
+      "hash": "0bf2cc3178a7cac2b751ce654a5b3fd3b5b0108fde76d2e4d007d9e2c45eec91",
+      "prevhash": "09be0b5efb55d984afb69fc95d8cb390a0ba59619e33f05f0e547e85d6b7cb54",
+      "proof": 0,
+      "Difficulty": 1,
+      "nonce": "0",
+      "validator": "dd07d961d87f205848979bfa7f48bc1e39b6e9cb5e1bc6cb5341aac226def895",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    }
+  ],
+  "transactions": {}
+}> a7dc6cb99842ba70b964a0c69056c37b2aa5cd9ea2c0e261a86b240770ad975a  do more work!
+505d14819f85e3ac7fe3aa3550a30003aa6754b6ae635356d4a475b59a910f73  do more work!
+355417d0f72429ce1a275f4ab317bbbfccfb60a9c18a28279ce1cecdf19953ae  do more work!
+49a313cbcca5b1d50dd81116f9198156ec4f386cc38cc2f14eff6509263ecff8  do more work!
+5b59d9543054ab8b765da650db8ac57005e5b1418b342164345862c12beb8351  do more work!
+c32cb7919caa6bf8172d8eb97e5bec930c6548de6ee21096b955663d0ea24c6c  do more work!
+f799a288b16ae9e91979f3b18ff987d445d8123678986f713b146f0a70a99075  do more work!
+6acdedd94ab072c755e10d3e88d74098b71562964a3f8ef7aca6ca0aa1cd9fdb  do more work!
+def4d2e275a3306fb46b7a509154eb7d6ccf4077512b66d96dea359e4b667b99  do more work!
+64a7bafe2b67083deb91c999f6a95c051f839e47acbd1fda63ef7fbc846c95cf  do more work!
+0aaf48167b7052860ec2f4d98eae81bba4152baaf4f7a0f4adb23fda992a44a3  work done!
+{
+  "blocks": [
+    {
+      "index": 0,
+      "timestamp": "2018-10-19 23:38:36.396024 -0700 PDT m=+0.002570290",
+      "result": 0,
+      "hash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "prevhash": "",
+      "proof": 100,
+      "Difficulty": 1,
+      "nonce": "",
+      "validator": "",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    },
+    {
+      "index": 1,
+      "timestamp": "2018-10-19 23:39:44.98112 -0700 PDT m=+54.865128667",
+      "result": 20,
+      "hash": "09be0b5efb55d984afb69fc95d8cb390a0ba59619e33f05f0e547e85d6b7cb54",
+      "prevhash": "f1534392279bddbf9d43dde8701cb5be14b82f76ec6607bf8d6ad557f60f304e",
+      "proof": 0,
+      "Difficulty": 1,
+      "nonce": "10",
+      "validator": "119ca1e2551eb312faadde38aff741844b82460ac38826b8e8b07405a1463e97",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    },
+    {
+      "index": 2,
+      "timestamp": "2018-10-19 23:42:48.521451 -0700 PDT m=+252.120433770",
+      "result": 30,
+      "hash": "0bf2cc3178a7cac2b751ce654a5b3fd3b5b0108fde76d2e4d007d9e2c45eec91",
+      "prevhash": "09be0b5efb55d984afb69fc95d8cb390a0ba59619e33f05f0e547e85d6b7cb54",
+      "proof": 0,
+      "Difficulty": 1,
+      "nonce": "0",
+      "validator": "dd07d961d87f205848979bfa7f48bc1e39b6e9cb5e1bc6cb5341aac226def895",
+      "transactions": {},
+      "accounts": {
+        "15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi": {
+          "balance": 10000,
+          "state": 0
+        }
+      }
+    }
+  ],
+  "transactions": {}
+}> > 
+
