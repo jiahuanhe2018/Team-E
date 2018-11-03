@@ -11,7 +11,7 @@ So I use two layers for optimization and scaling. The idea is very similar to th
    
     *   Still runs PoS + PoW as before.
 
-    *   Serves queries on account balances.
+    *   Serves queries on account balances, and disputed transaction processing.
 
 *   Child chain:
 
