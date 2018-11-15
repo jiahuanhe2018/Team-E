@@ -21,5 +21,5 @@ go run main.go -c chain -s lzhx_ -l 8080 -a 15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi -
 go run main.go  -c chain -s lzx -l 8082 -a 1Hn94smEVwEd3kPfvF39ozhqCQKGqce5qc -d /ip4/192.168.1.6/tcp/8080/ipfs/QmaHAkUhArtD2UwW4PMRGzZxCSVV6SAssy2C6XJRjonUWR -p pox
 
 // Run this only after the peers running are connected and blockchain has >= 1-2 blocks.
-curl -i --request POST --header 'Content-Type: application/json' --dta '{"To":"1GBF4VK4Ys2R5Yiz3K6ZovXpYarGH2qsEc","From":"15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi","Value":100,"Data":"message2"}' http://127.0.0.1:8081/txpool 
+curl -i --request POST --header 'Content-Type: application/json' --data '{"To":"1GBF4VK4Ys2R5Yiz3K6ZovXpYarGH2qsEc","From":"15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi","Value":100,"Data":"message2"}' http://127.0.0.1:8081/txpool 
 ```
