@@ -37,10 +37,10 @@ func Validate_Address(from, to string, amount uint64, wallets Wallets) bool {
 		fmt.Println("ERROR: Recipient address is not valid")
 		return false
 	}
-	wall := wallets.GetWallet(from)
+	/*wall := wallets.GetWallet(from)
 	if string(wall.GetAddress()[:]) != from {
 		fmt.Println("Parameter verification failed!")
 		return false
-	}
+	}*/
 	return true
 }

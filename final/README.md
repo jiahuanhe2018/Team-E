@@ -31,13 +31,13 @@ go run main.go -c chain -s desiree -l 8080 -a 1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW
 go run main.go  -c chain -s lzx -l 8082 -a 1Hn94smEVwEd3kPfvF39ozhqCQKGqce5qc -d /ip4/192.168.1.6/tcp/8080/ipfs/QmaHAkUhArtD2UwW4PMRGzZxCSVV6SAssy2C6XJRjonUWR -p pox
 
 // Run this only after the peers running are connected and blockchain has >= 1-2 blocks.
-// Use the accounts generated at the beginning.
+// Use the accounts generated at the beginning as From and to in the transactions.
+// They can be found by running listaddresses on a wallet.
+// Example: go run main.go -c account desiree listaddresses
 curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW","To":"1BvT54va6zRhos2rVkT4DDSMexTCtT4q6J","Value":100,"Data":"message2"}' http://127.0.0.1:8081/txpool 
 ```
 
 ## Bugs to Fix and Features Wish List (in decending priority order)
-
-*   Transaction currently only works best for accounts in the same wallet, but not for accounts in different wallets, probably due to account state not being properly updated. I'm (Desiree) working on fixing it, expected by 11/16 15pm Beijing time.
 
 *   Unclear if actual outbound ip would work in p2p communication. I only tested on my single machine. This needs to be tested.
 
@@ -47,5 +47,5 @@ curl -i --request POST --header 'Content-Type: application/json' --data '{"From"
 
 *   States are not stored in leveldb yet, mainly in memory.
 
-*   Occasionally dialing the bootstrap peer would give an error, but trying again usually works. I tried DHT peer discovery before, but it didn't work, but current peer communication is purely by dialing -- this limits p2p communication.
+*   I tried DHT peer discovery before, but it didn't work, but current peer communication is purely by dialing -- this limits p2p communication.
  

@@ -61,6 +61,7 @@ func HashPubKey(pubKey []byte) []byte {
 // ValidateAddress check if address if valid
 func ValidateAddress(address string) bool {
 	pubKeyHash := Base58Decode([]byte(address))
+	log.Printf("address decoded to %s, length %d", pubKeyHash, len(pubKeyHash))
 	if len(pubKeyHash)-addressChecksumLen < 0 {
 		return false
 	}

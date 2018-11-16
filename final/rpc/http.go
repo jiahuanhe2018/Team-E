@@ -110,7 +110,6 @@ func handleWriteBlock(w http.ResponseWriter, r *http.Request) {
 	if len(blockchain.BlockchainInstance.TxPool.AllTx) > 0 {
 		blockchain.BlockchainInstance.PackageTx(&newBlock)
 	}else {
-		newBlock.Accounts = blockchain.BlockchainInstance.LastBlock().Accounts
 		newBlock.Transactions = make(map[string]blockchain.Transaction)
 	}
 

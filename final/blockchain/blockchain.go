@@ -54,13 +54,13 @@ type Block struct {
         Validator string `json:"validator"`  
 
 	Transactions map[string]Transaction `json:"transactions"`
-	Accounts   map[string]Account  `json:"accounts"`
 	MinerReward	uint64 `json:"minerreward"`
 }
 
 type Account struct {
 	Balance uint64 `json:"balance"`
 	State   uint64 `json:"state"`
+	LastModifiedBlockIndex	int	`json:"last_modified_block_index"`
 }
 
 type SpecialPayload struct {
@@ -104,6 +104,7 @@ func (p *TxPool)Clear() bool {
 type Blockchain struct {
 	Blocks []Block
 	TxPool *TxPool
+	Accounts map[string]Account
 	DataDir string
         // Proof of XXX: pow, pos, or pox
         Proof 	string
@@ -114,6 +115,7 @@ type Blockchain struct {
 // For communication among peers
 type BlockchainMessage struct {
 	Blocks []Block	`json:"blocks"`
+	Accounts map[string]Account	`json:"accounts"`	
 	Transactions map[string]Transaction	`json:"transactions"`
 }
 
@@ -152,7 +154,7 @@ func (t *Blockchain) LastBlock() Block {
 }
 
 func (t *Blockchain) GetBalance(address string) uint64 {
-	accounts := t.LastBlock().Accounts
+	accounts := t.Accounts
 	if value, ok := accounts[address]; ok {
 		return value.Balance
 	}
@@ -162,7 +164,7 @@ func (t *Blockchain) GetBalance(address string) uint64 {
 
 func (t *Blockchain)PackageTx(newBlock *Block) {
 	(*newBlock).Transactions = t.TxPool.AllTx
-	AccountsMap := t.LastBlock().Accounts
+	AccountsMap := t.Accounts
 	for k1, v1 := range AccountsMap {
 		fmt.Println(k1, "--", v1)
 	}
@@ -178,6 +180,7 @@ func (t *Blockchain)PackageTx(newBlock *Block) {
 			log.Println("Sadly we are going to reset all accounts' states")
 			for ak, av := range AccountsMap {
 				av.State = 0
+				av.LastModifiedBlockIndex = (*newBlock).Index
 				AccountsMap[ak] = av
 			}
 			v.Processed = true
@@ -192,6 +195,7 @@ func (t *Blockchain)PackageTx(newBlock *Block) {
 			}
 			value.Balance -= v.Amount
 			value.State += 1
+			value.LastModifiedBlockIndex = (*newBlock).Index
 			v.Processed = true
 			t.TxPool.AllTx[k] = v			
 			AccountsMap[v.Sender] = value
@@ -199,12 +203,14 @@ func (t *Blockchain)PackageTx(newBlock *Block) {
 
 		if value, ok := AccountsMap[v.Recipient]; ok {
 			value.Balance += v.Amount
+			value.LastModifiedBlockIndex = (*newBlock).Index
 			AccountsMap[v.Recipient] = value
 		}else {
 
 			newAccount := new(Account)
 			newAccount.Balance = v.Amount
 			newAccount.State = 0
+			newAccount.LastModifiedBlockIndex = (*newBlock).Index
 			AccountsMap[v.Recipient] = *newAccount
 		}
 		(*newBlock).MinerReward += uint64(TransactionReward)
@@ -215,10 +221,9 @@ func (t *Blockchain)PackageTx(newBlock *Block) {
     //if len(unusedTx) > 0 {
 //		for _, v := range unusedTx{
 //			t.AddTxPool(&v)
-//		}
-//	}
-
-	(*newBlock).Accounts = AccountsMap
+//
+	t.Accounts = AccountsMap
+	// TODO: update account data in wallets
 }
 
 func (t *Blockchain)WriteData2File() {
@@ -286,6 +291,7 @@ func UnLock(){
 func PrintBlockchain() {
 	var tMessage BlockchainMessage
 	tMessage.Blocks = BlockchainInstance.Blocks
+	tMessage.Accounts = BlockchainInstance.Accounts
 	tMessage.Transactions = BlockchainInstance.TxPool.AllTx
 
 	bytes, err := json.MarshalIndent(tMessage, "", "  ")
@@ -302,6 +308,7 @@ func WriteBlockchainJson(rw *bufio.ReadWriter) {
 	
 	mutex.Lock()
 	tMessage.Blocks = BlockchainInstance.Blocks
+	tMessage.Accounts = BlockchainInstance.Accounts
 	tMessage.Transactions = BlockchainInstance.TxPool.AllTx
 	bytes, err := json.Marshal(tMessage)
 	if err != nil {
@@ -345,6 +352,22 @@ func ProcessTransactionsDiff(coming_tx map[string]Transaction) bool {
 	return has_diff
 }
 
+func ProcessAccountsDiff(coming_accounts map[string]Account) bool {
+	has_diff := false
+	for k, v := range coming_accounts {
+		if value, ok := BlockchainInstance.Accounts[k]; ok {
+			if v.LastModifiedBlockIndex > value.LastModifiedBlockIndex {
+				has_diff = true
+				BlockchainInstance.Accounts[k] = v
+			}
+		} else {
+			has_diff = true
+			BlockchainInstance.Accounts[k] = v 
+		}
+	}
+	return has_diff
+}
+
 func ReadData(rw *bufio.ReadWriter) {
 	for {
 		str, err := rw.ReadString('\n')
@@ -364,7 +387,7 @@ func ReadData(rw *bufio.ReadWriter) {
 
 			has_diff := false
 			mutex.Lock()
-			has_diff = ProcessBlocksDiff(tMessage.Blocks) || ProcessTransactionsDiff(tMessage.Transactions)
+			has_diff = ProcessBlocksDiff(tMessage.Blocks) || ProcessTransactionsDiff(tMessage.Transactions) || ProcessAccountsDiff(tMessage.Accounts)
 			if has_diff {
 				PrintBlockchain()
                                 BlockchainInstance.WriteData2File()
@@ -415,7 +438,6 @@ func WriteData(rw *bufio.ReadWriter) {
 		if len(BlockchainInstance.TxPool.AllTx) > 0 {
 			BlockchainInstance.PackageTx(&newBlock)
 		}else {
-			newBlock.Accounts = BlockchainInstance.LastBlock().Accounts
 			newBlock.Transactions = make(map[string]Transaction)
 		}
 
@@ -445,9 +467,10 @@ func WriteData(rw *bufio.ReadWriter) {
 				mutex.Lock()
 				newBlock.MinerReward += uint64(NewBlockReward)
 				if Wallets.DefaultMinerAccount != "" {
-					minerAccount := newBlock.Accounts[Wallets.DefaultMinerAccount]
+					minerAccount := BlockchainInstance.Accounts[Wallets.DefaultMinerAccount]
 					minerAccount.Balance += newBlock.MinerReward
-					newBlock.Accounts[Wallets.DefaultMinerAccount] = minerAccount
+					minerAccount.LastModifiedBlockIndex = newBlock.Index
+					BlockchainInstance.Accounts[Wallets.DefaultMinerAccount] = minerAccount
 				}
 				// TODO: put this reward into transactions as well.
 
@@ -484,12 +507,12 @@ func GenPosValidator(stdReader *bufio.Reader) string {
                 return ""
         }
 */
-	wall := Wallets.GetWallet(Wallets.DefaultMinerAccount)
+	stakeAccount := BlockchainInstance.Accounts[Wallets.DefaultMinerAccount]
         t := time.Now()
         validator := CalculateHash(t.String())
 	// Avoid 0 balance.
-        validators[validator] = int(wall.Balance) + 1
-        log.Printf("Miner account balance %d. Candidate validator %s\n", wall.Balance, validator)
+        validators[validator] = int(stakeAccount.Balance) + 1
+        log.Printf("Miner account balance %d. Candidate validator %s\n", stake.Balance, validator)
 
 	return validator
 }

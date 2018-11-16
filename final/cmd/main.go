@@ -74,13 +74,27 @@ func runblockchain(ip *string, listenF *int, target *string, seed *int64, secio 
 		newAccount := new(blockchain.Account)
 		newAccount.Balance = 10000
 		newAccount.State = 0
+		newAccount.LastModifiedBlockIndex = 0
 		defaultAccounts[*initAccounts] = *newAccount
+		
+		// keep track of the other accounts in this wallet.
+		for k, v := range blockchain.Wallets.Wallets {
+			if k == *initAccounts {
+				continue
+			}
+			var account blockchain.Account
+			account.Balance = (*v).Balance
+			account.State = (*v).State
+			account.LastModifiedBlockIndex = 0
+			defaultAccounts[k] = account
+		}
 	}
-	genesisBlock = blockchain.Block{0, t.String(), 0, blockchain.CalculateBlockHash(genesisBlock), "", 100, blockchain.Difficulty, "", "", make(map[string]blockchain.Transaction), defaultAccounts, 0}
+	genesisBlock = blockchain.Block{0, t.String(), 0, blockchain.CalculateBlockHash(genesisBlock), "", 100, blockchain.Difficulty, "", "", make(map[string]blockchain.Transaction), 0}
 
 	var blocks []blockchain.Block
 	blocks = append(blocks, genesisBlock)
 	blockchain.BlockchainInstance.Blocks =  blocks
+	blockchain.BlockchainInstance.Accounts = defaultAccounts
 	blockchain.BlockchainInstance.DataDir = *datadir
         blockchain.BlockchainInstance.Proof = *proof
 	blockchain.BlockchainInstance.NumPowWinners = 1

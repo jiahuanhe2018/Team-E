@@ -38,7 +38,7 @@ const powWinnerIncrementInterval = 50
 // Check number of miner peers, and adjust pow winners accordingly.
 // Use number of accounts to approximate miner peers.
 func maybeAdjustPowWinners() {
-  numAccounts := len(BlockchainInstance.LastBlock().Accounts)
+  numAccounts := len(BlockchainInstance.Accounts)
   if numAccounts <= 2 {
 	BlockchainInstance.NumPowWinners = 1
   } else {
