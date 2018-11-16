@@ -16,8 +16,13 @@ I call it pox and use -p flag for concensus in the code.
 Test commands that I used on different terminals are
 
 ```
+// Create local wallet and accounts. Each peer should have its own wallet (replace "desiree" in createwallet command) and accounts.
+// Run this command multiple times to create multiple accounts for one wallet.
+// Later, -s and -a flags in the chain mode commands should use those wallet and accounts addresses.
+go run main.go -c account desiree createwallet
+
 // Bootstrap peer with a wallet (-s flag) and a miner account (-a flag).
-go run main.go -c chain -s lzhx_ -l 8080 -a 15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi -p pox -i ""
+go run main.go -c chain -s desiree -l 8080 -a 1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW -p pox -i ""
 
 // Another peer directly dialing to the bootstrap peer (-d flag) with a different wallet (-s flag) and another miner account (-a flag).
 // Each peer can have its own wallet and accounts. -s and -a flags should be stable after having wallet and accounts created.
@@ -26,7 +31,8 @@ go run main.go -c chain -s lzhx_ -l 8080 -a 15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi -
 go run main.go  -c chain -s lzx -l 8082 -a 1Hn94smEVwEd3kPfvF39ozhqCQKGqce5qc -d /ip4/192.168.1.6/tcp/8080/ipfs/QmaHAkUhArtD2UwW4PMRGzZxCSVV6SAssy2C6XJRjonUWR -p pox
 
 // Run this only after the peers running are connected and blockchain has >= 1-2 blocks.
-curl -i --request POST --header 'Content-Type: application/json' --data '{"To":"1GBF4VK4Ys2R5Yiz3K6ZovXpYarGH2qsEc","From":"15QuLUSY8m4B1GyMGBr82nEjwzGwV82Wvi","Value":100,"Data":"message2"}' http://127.0.0.1:8081/txpool 
+// Use the accounts generated at the beginning.
+curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW","To":"1BvT54va6zRhos2rVkT4DDSMexTCtT4q6J","Value":100,"Data":"message2"}' http://127.0.0.1:8081/txpool 
 ```
 
 ## Bugs to Fix and Features Wish List (in decending priority order)
