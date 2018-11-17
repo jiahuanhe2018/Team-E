@@ -13,10 +13,10 @@ I call it pox and use -p flag for concensus in the code.
 
 *   Use --demo flag for manual input result in each round of mining and watching block mining process more slowly. Default is false, and does not require manul input result.    
 
-Test commands that I used on different terminals are
+Test commands that I used on different terminals (assume in cmd directory) are
 
 ```
-// Create local wallet and accounts. Each peer should have its own wallet (replace "desiree" in createwallet command) and accounts.
+// (Optional) create local wallet and accounts. Each peer should have its own wallet (replace "desiree" in createwallet command) and accounts.
 // Run this command multiple times to create multiple accounts for one wallet.
 // Later, -s and -a flags in the chain mode commands should use those wallet and accounts addresses.
 go run main.go -c account desiree createwallet
@@ -30,18 +30,21 @@ go run main.go -c chain -s desiree -l 8080 -a 1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW
 //
 go run main.go  -c chain -s lzx -l 8082 -a 1Hn94smEVwEd3kPfvF39ozhqCQKGqce5qc -d /ip4/192.168.1.6/tcp/8080/ipfs/QmaHAkUhArtD2UwW4PMRGzZxCSVV6SAssy2C6XJRjonUWR -p pox
 
-// Run this only after the peers running are connected and blockchain has >= 1-2 blocks.
-// Use the accounts generated at the beginning as From and to in the transactions.
-// They can be found by running listaddresses on a wallet.
-// Example: go run main.go -c account desiree listaddresses
+// Generate transactions for the running peers' transactions.
+// --wallets is for comma separated wallet suffix.
+// -n is for number of transactions to generate.
+// Optionally, --address is to specify http post address, default is 127.0.0.1:8081.
+//
+go run gen_test_txns.go --wallets desiree,lzx -n 8
+
+
+// Of course, you can manually send transactions.
 curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW","To":"1BvT54va6zRhos2rVkT4DDSMexTCtT4q6J","Value":100,"Data":"message2"}' http://127.0.0.1:8081/txpool 
 ```
 
 ## Bugs to Fix and Features Wish List (in decending priority order)
 
 *   Unclear if actual outbound ip would work in p2p communication. I only tested on my single machine. This needs to be tested.
-
-*   We may need a test script, given a list of all accounts and number of transactions, generate http post transactions and send them to the block chain.
 
 *   This is better to be integrated with two layer optimization, such as TrueBit or Plasma. We can implement our own simplified version, e.g. in the code that handles http post transaction, and submit multiple transactions in batch to the blockchain.
 
