@@ -512,7 +512,7 @@ func GenPosValidator(stdReader *bufio.Reader) string {
         validator := CalculateHash(t.String())
 	// Avoid 0 balance.
         validators[validator] = int(stakeAccount.Balance) + 1
-        log.Printf("Miner account balance %d. Candidate validator %s\n", stake.Balance, validator)
+        log.Printf("Miner account balance %d. Candidate validator %s\n", stakeAccount.Balance, validator)
 
 	return validator
 }
