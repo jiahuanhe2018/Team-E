@@ -30,13 +30,15 @@ go run main.go -c chain -s desiree -l 8080 -a 1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW
 //
 go run main.go  -c chain -s lzx -l 8082 -a 1Hn94smEVwEd3kPfvF39ozhqCQKGqce5qc -d /ip4/192.168.1.6/tcp/8080/ipfs/QmaHAkUhArtD2UwW4PMRGzZxCSVV6SAssy2C6XJRjonUWR -p pox
 
-// Generate transactions for the running peers' transactions.
+// Generate transactions among the running peers' accounts. This outputs a test transaction file.
 // --wallets is for comma separated wallet suffix.
 // -n is for number of transactions to generate.
 // Optionally, --address is to specify http post address, default is 127.0.0.1:8081.
 //
 go run gen_test_txns.go --wallets desiree,lzx -n 8
 
+// Now, run the generated transactions from the test transaction file.
+. test_http_post_txns
 
 // Of course, you can manually send transactions.
 curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW","To":"1BvT54va6zRhos2rVkT4DDSMexTCtT4q6J","Value":100,"Data":"message2"}' http://127.0.0.1:8081/txpool 
