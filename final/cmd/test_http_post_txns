@@ -1,0 +1,8 @@
+curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW","To":"165DuRNbr11gq3YMN8yBiJRq1BywBoKUMe","Value":100,"Data":"message"}' http://127.0.0.1:8081/txpool
+curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"165DuRNbr11gq3YMN8yBiJRq1BywBoKUMe","To":"1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW","Value":100,"Data":"message"}' http://127.0.0.1:8081/txpool
+curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1Hn94smEVwEd3kPfvF39ozhqCQKGqce5qc","To":"1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW","Value":100,"Data":"message"}' http://127.0.0.1:8081/txpool
+curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1BvT54va6zRhos2rVkT4DDSMexTCtT4q6J","To":"1Hn94smEVwEd3kPfvF39ozhqCQKGqce5qc","Value":100,"Data":"message"}' http://127.0.0.1:8081/txpool
+curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"165DuRNbr11gq3YMN8yBiJRq1BywBoKUMe","To":"1Hn94smEVwEd3kPfvF39ozhqCQKGqce5qc","Value":100,"Data":"message"}' http://127.0.0.1:8081/txpool
+curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW","To":"1BvT54va6zRhos2rVkT4DDSMexTCtT4q6J","Value":100,"Data":"message"}' http://127.0.0.1:8081/txpool
+curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1Hn94smEVwEd3kPfvF39ozhqCQKGqce5qc","To":"165DuRNbr11gq3YMN8yBiJRq1BywBoKUMe","Value":100,"Data":"message"}' http://127.0.0.1:8081/txpool
+curl -i --request POST --header 'Content-Type: application/json' --data '{"From":"1FghRtifoTLuMsFRacRBpBYD2VwLmGoAhW","To":"1Hn94smEVwEd3kPfvF39ozhqCQKGqce5qc","Value":100,"Data":"message"}' http://127.0.0.1:8081/txpool
